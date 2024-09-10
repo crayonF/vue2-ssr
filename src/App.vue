@@ -1,8 +1,14 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <nav>
+      <RouterLink to="/">Go to Home</RouterLink>
+      <RouterLink to="/about">Go to About</RouterLink>
+    </nav>
+    <main>
+      <RouterView />
+    </main>
+    </div>
 </template>
 
 <script>
