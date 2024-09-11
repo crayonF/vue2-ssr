@@ -2,8 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <nav>
-      <RouterLink to="/">Go to Home</RouterLink>
+      <RouterLink to="/">Go to Home1111</RouterLink>
       <RouterLink to="/about">Go to About</RouterLink>
+      <RouterLink to="/test">Go to test</RouterLink>
     </nav>
     <main>
       <RouterView />

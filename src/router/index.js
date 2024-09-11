@@ -12,6 +12,16 @@ export function createRouter() {
         path: '/',
         name: 'HelloWorld',
         component: HelloWorld
+      },
+      {
+        path: '/about',
+        name: 'about',
+        component: () => import('@/components/About')
+      },
+      {
+        path: '/test',
+        name: 'test',
+        component: () => import('@/components/Test')
       }
     ]
   })
