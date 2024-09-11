@@ -5,6 +5,9 @@
       <RouterLink to="/">Go to Home1111</RouterLink>
       <RouterLink to="/about">Go to About</RouterLink>
       <RouterLink to="/test">Go to test</RouterLink>
+
+      <el-button type="primary">主要按钮</el-button>
+      <el-button type="success">成功按钮</el-button>
     </nav>
     <main>
       <RouterView />
@@ -14,7 +17,7 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 

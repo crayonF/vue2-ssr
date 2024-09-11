@@ -65,6 +65,30 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader', // 或 'style-loader'，如果不是 Vue 项目
+          'css-loader'
+        ]
+      },
+      // 如果你使用预处理器（如 SCSS 或 Less），也要添加相应的 loader
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'less-loader'
+        ]
       }
     ]
   },

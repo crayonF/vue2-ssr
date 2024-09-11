@@ -41,6 +41,7 @@ function render(req, res) {
   const context = { url: req.url };
 
   renderer.renderToString(context, (err, html) => {
+    console.log(err, '111')
     if (err) {
       if (err.code === 404) {
         res.status(404).end('Page not found');
@@ -53,6 +54,7 @@ function render(req, res) {
   });
 }
 
+
 // 静态资源
 app.use('/', express.static(path.resolve(__dirname, './dist')));
 
@@ -62,6 +64,6 @@ app.get('*', !isLocal ? render : (req, res) => {
 });
 
 // 启动服务器
-app.listen(8080, () => {
-  console.log('Server is running at http://localhost:8080');
+app.listen(8081, () => {
+  console.log('Server is running at http://localhost:8081');
 });
