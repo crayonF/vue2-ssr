@@ -90,7 +90,14 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
+  asyncData ({ store, route }) {
+    // 触发 action 后，会返回 Promise
+    return store.dispatch('getUser')
+  },
+  mounted() {
+    this.msg = this.$store.state.user.userInfo.name
+  },
 }
 </script>
 

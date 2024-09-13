@@ -5,17 +5,29 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import { createRouter } from './router';
+import { createStore } from './store'
+import { sync } from 'vuex-router-sync'
 
 Vue.use(ElementUI);
 
+
+// 仅客户端时才渲染
+if (typeof window !== 'undefined') {
+  window.aaa = '1111'
+}
+
+const router = createRouter();
+const store = createStore()
+
 export function createApp() {
-  const router = createRouter();
+  sync(store, router)
 
   const app = new Vue({
     el: '#app',
+    store,
     router,
     render: h => h(App)
   })
 
-  return { app, router };
+  return { app, router, store };
 }
